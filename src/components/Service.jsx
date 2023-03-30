@@ -4,8 +4,8 @@ const Service = () => {
   return (
     <section className="ds intro_section">
     <div className="flexslider vertical-nav">
-      <ul className="slides">
-        <li>
+      
+        <div>
           <img src="assets/images/slide02.png" alt="" />
           <div className="container">
             <div className="row">
@@ -80,8 +80,8 @@ const Service = () => {
             {/* eof .row */}
           </div>
           {/* eof .container */}
-        </li>
-      </ul>
+        </div>
+      
     </div>
     {/* eof flexslider */}
   </section>

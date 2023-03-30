@@ -1,11 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const About = () => {
   return (
     <section className="ds intro_section">
     <div className="flexslider vertical-nav">
-      <ul className="slides">
-        <li>
+     
+        <div>
           <img src="assets/images/slide01.png" alt="" />
           <div className="container">
             <div className="row">
@@ -42,12 +43,12 @@ const About = () => {
                           <p>HI MAGAZINE</p>
                         </li>
                       </ul>
-                      <a
-                        href="about.html"
+                      <Link
+                        to="/about"
                         className="theme_button color1 topmargin_20"
                       >
                         About us
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   {/* eof .slide_description */}
@@ -59,8 +60,8 @@ const About = () => {
             {/* eof .row */}
           </div>
           {/* eof .container */}
-        </li>
-      </ul>
+        </div>
+     
     </div>
     {/* eof flexslider */}
   </section>

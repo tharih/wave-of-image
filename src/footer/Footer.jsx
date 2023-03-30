@@ -8,7 +8,7 @@ const Footer = () => {
     <div className="container">
       <div className="row">
         <div
-          className="col-md-3 col-lg-3 to_animate"
+          className="col-md-3 col-lg-3 "
           
         >
           <div className="widget widget_text">
@@ -34,7 +34,7 @@ const Footer = () => {
           </div>
         </div>
         <div
-          className="col-md-6 col-lg-offset-1 col-lg-4 to_animate"
+          className="col-md-6 col-lg-offset-1 col-lg-4 "
           
         >
           <div className="row footer_lists">
@@ -82,7 +82,7 @@ const Footer = () => {
           </div>
         </div>
         <div
-          className="col-md-3 col-lg-offset-1 col-lg-3 to_animate"
+          className="col-md-3 col-lg-offset-1 col-lg-3 "
           
         >
           <div className="widget widget_banner">
