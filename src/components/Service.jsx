@@ -25,7 +25,7 @@ const Service = () => {
                         </div>
                         <div className="media-body">
                           <h4 className="topmargin_0 bottommargin_5">
-                            <a href="#">Photography</a>
+                            <p>Photography</p>
                           </h4>
                         </div>
                       </div>
@@ -35,7 +35,7 @@ const Service = () => {
                         </div>
                         <div className="media-body">
                           <h4 className="topmargin_0 bottommargin_5">
-                            <a href="#">Retouching</a>
+                            <p>Retouching</p>
                           </h4>
                         </div>
                       </div>
@@ -45,7 +45,7 @@ const Service = () => {
                         </div>
                         <div className="media-body">
                           <h4 className="topmargin_0 bottommargin_5">
-                            <a href="#">Wedding Album Templates</a>
+                            <p>Wedding Album Templates</p>
                           </h4>
                         </div>
                       </div>
@@ -55,7 +55,7 @@ const Service = () => {
                         </div>
                         <div className="media-body">
                           <h4 className="topmargin_0 bottommargin_5">
-                            <a href="#">Courses from Professional Models</a>
+                            <p>Courses from Professional Models</p>
                           </h4>
                         </div>
                       </div>
@@ -65,7 +65,7 @@ const Service = () => {
                         </div>
                         <div className="media-body">
                           <h4 className="topmargin_0 bottommargin_5">
-                            <a href="#">Colour Grading</a>
+                            <p>Colour Grading</p>
                           </h4>
                         </div>
                       </div>

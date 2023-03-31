@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Contact = () => {
   return (
@@ -12,9 +13,9 @@ const Contact = () => {
               <i className="rt-icon2-location2 highlight" />
             </div>
           </div>
-          <a href="#" className="theme_button">
+          <Link to="/" className="theme_button">
             kurunagala
-          </a>
+          </Link>
         </div>
       </div>
     </div>

@@ -61,13 +61,13 @@ const Contact = () => {
             Robert
             <br />
             <span className="highlight">
-              <a
-                href="https://html.modernwebtemplates.com/cdn-cgi/l/email-protection"
+              <Link
+                to="https://html.modernwebtemplates.com/cdn-cgi/l/email-protection"
                 className="__cf_email__"
                 data-cfemail="f0829f92958284b0808295839994959e84de939f9d"
               >
                 [email&nbsp;protected]
-              </a>
+              </Link>
             </span>
             <br /> 8 (800) 456-5848
           </div>
@@ -161,29 +161,29 @@ const Contact = () => {
       <div className="row topmargin_20 bottommargin_10">
         <div className="col-sm-12 text-center">
           <div className="page_social_icons">
-            <a
+            <Link
               className="social-icon color-bg-icon soc-facebook"
-              href="#"
+              to="#"
               title="Facebook"
             />
-            <a
+            <Link
               className="social-icon color-bg-icon soc-twitter"
-              href="#"
+              to="#"
               title="Twitter"
             />
-            <a
+            <Link
               className="social-icon color-bg-icon soc-google"
-              href="#"
+              to="#"
               title="Google"
             />
-            <a
+            <Link
               className="social-icon color-bg-icon soc-linkedin"
-              href="#"
+              to="#"
               title="LinkedIn"
             />
-            <a
+            <Link
               className="social-icon color-bg-icon soc-pinterest"
-              href="#"
+              to="#"
               title="Pinterest"
             />
           </div>

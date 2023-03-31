@@ -99,9 +99,7 @@ const Footer = () => {
                   <br /> Beauty
                 </h2>
               </div>
-              <div className="media-links">
-                <a href="#" className="abs-link" />
-              </div>
+              
             </div>
           </div>
         </div>
@@ -115,9 +113,9 @@ const Footer = () => {
           <p className="darklinks">
             © Wave of image | Created with
             <i className="rt-icon2-heart highlight" /> by
-            <a href="http://modernwebtemplates.com/">
+            <Link to="http://modernwebtemplates.com/">
               Radiant Spark Technology
-            </a>
+            </Link>
           </p>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Gallery = () => {
   return (
@@ -8,18 +9,18 @@ const Gallery = () => {
       <div className="row">
         <div className="col-sm-12">
           <div className="filters isotope_filters text-center">
-            <a href="#" data-filter="*" className="selected">
+            <Link to="#" data-filter="*" className="selected">
               All
-            </a>
-            <a href="#" data-filter=".fashion">
+            </Link>
+            <Link to="#" data-filter=".fashion">
               Photography
-            </a>
-            <a href="#" data-filter=".studio">
+            </Link>
+            <Link to="#" data-filter=".studio">
               Retouching
-            </a>
-            <a href="#" data-filter=".session">
+            </Link>
+            <Link to="#" data-filter=".session">
               Colour grading
-            </a>
+            </Link>
           </div>
           <div
             className="isotope_container isotope row masonry-layout"

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Gallery = () => {
   return (
@@ -7,18 +8,18 @@ const Gallery = () => {
     <div className="row boxed-padding bottommargin_40">
       <div className="col-lg-7">
         <div className="filters isotope_filters inline-block margin_0">
-          <a href="#" data-filter="*" className="selected">
+          <Link to='/' className="selected">
             All
-          </a>
-          <a href="#" data-filter=".fashion">
+          </Link >
+          <Link to='/' data-filter=".fashion">
             Photography
-          </a>
-          <a href="#" data-filter=".studio">
+          </Link >
+          <Link to='/' data-filter=".studio">
             Retouching
-          </a>
-          <a href="#" data-filter=".session">
+          </Link >
+          <Link to='/' data-filter=".session">
             Colour grading
-          </a>
+          </Link >
         </div>
       </div>
       <div className="col-lg-5 text-lg-right">
@@ -273,31 +274,31 @@ const Gallery = () => {
       <div className="col-sm-12 text-center margin_0">
         <ul className="pagination ">
           <li>
-            <a href="#">
+            <Link to="#">
               <span className="sr-only">Prev</span>
               <i className="rt-icon2-chevron-thin-left" />
-            </a>
+            </Link>
           </li>
           <li className="active">
-            <a href="#">1</a>
+            <Link to="#">1</Link>
           </li>
           <li>
-            <a href="#">2</a>
+            <Link to="#">2</Link>
           </li>
           <li>
-            <a href="#">3</a>
+            <Link to="#">3</Link>
           </li>
           <li>
-            <a href="#">4</a>
+            <Link to="#">4</Link>
           </li>
           <li>
-            <a href="#">5</a>
+            <Link to="#">5</Link>
           </li>
           <li>
-            <a href="#">
+            <Link to="#">
               <span className="sr-only">Next</span>
               <i className="rt-icon2-chevron-thin-right" />
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
