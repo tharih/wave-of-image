@@ -1,12 +1,7 @@
-<<<<<<< Updated upstream
-import React from 'react'
-import { Link } from 'react-router-dom'
-=======
 import React, { useEffect } from "react";
 import $ from "jquery";
 import "jquery-ui-dist/jquery-ui";
 import { Link } from "react-router-dom";
->>>>>>> Stashed changes
 
 const Gallery = () => {
   useEffect(() => {
@@ -25,24 +20,6 @@ const Gallery = () => {
 
   return (
     <section className="ds ms page_models models_portrait gorizontal_padding section_padding_70">
-<<<<<<< Updated upstream
-  <div className="container-fluid">
-    <div className="row boxed-padding bottommargin_40">
-      <div className="col-lg-7">
-        <div className="filters isotope_filters inline-block margin_0">
-          <Link to='/' className="selected">
-            All
-          </Link >
-          <Link to='/' data-filter=".fashion">
-            Photography
-          </Link >
-          <Link to='/' data-filter=".studio">
-            Retouching
-          </Link >
-          <Link to='/' data-filter=".session">
-            Colour grading
-          </Link >
-=======
       <div className="container-fluid">
         <div className="row boxed-padding bottommargin_40">
           <div className="col-lg-7">
@@ -93,7 +70,6 @@ const Gallery = () => {
               </div>
             </form>
           </div>
->>>>>>> Stashed changes
         </div>
         <div
           className="isotope_container isotope row masonry-layout"
@@ -386,217 +362,8 @@ const Gallery = () => {
           </div>
         </div>
       </div>
-<<<<<<< Updated upstream
-      <div className="isotope-item col-lg-3 col-md-4 col-sm-6 session">
-        <div className="vertical-item content-absolute">
-          <div className="item-media">
-            <img className="img_size_two" src="assets/images/03.jpg" alt="" />
-            <div className="media-links">
-              <div className="links-wrap">
-                <a
-                  className="p-view prettyPhoto "
-                  title=""
-                  data-gal="prettyPhoto[gal]"
-                  href="assets/images/03.jpg"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="isotope-item col-lg-3 col-md-4 col-sm-6 fashion">
-        <div className="vertical-item content-absolute">
-          <div className="item-media">
-            <img className="img_size_two" src="assets/images/04.jpg" alt="" />
-            <div className="media-links">
-              <div className="links-wrap">
-                <a
-                  className="p-view prettyPhoto "
-                  title=""
-                  data-gal="prettyPhoto[gal]"
-                  href="assets/images/04.jpg"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="isotope-item col-lg-3 col-md-4 col-sm-6 studio">
-        <div className="vertical-item content-absolute">
-          <div className="item-media">
-            <img className="img_size_two" src="assets/images/05.jpg" alt="" />
-            <div className="media-links">
-              <div className="links-wrap">
-                <a
-                  className="p-view prettyPhoto "
-                  title=""
-                  data-gal="prettyPhoto[gal]"
-                  href="assets/images/05.jpg"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="isotope-item col-lg-3 col-md-4 col-sm-6 session">
-        <div className="vertical-item content-absolute">
-          <div className="item-media">
-            <img className="img_size_two" src="assets/images/06.jpg" alt="" />
-            <div className="media-links">
-              <div className="links-wrap">
-                <a
-                  className="p-view prettyPhoto "
-                  title=""
-                  data-gal="prettyPhoto[gal]"
-                  href="assets/images/06.jpg"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="isotope-item col-lg-3 col-md-4 col-sm-6 fashion">
-        <div className="vertical-item content-absolute">
-          <div className="item-media">
-            <img className="img_size_two" src="assets/images/1.jpg" alt="" />
-            <div className="media-links">
-              <div className="links-wrap">
-                <a
-                  className="p-view prettyPhoto "
-                  title=""
-                  data-gal="prettyPhoto[gal]"
-                  href="assets/images/1.jpg"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="isotope-item col-lg-3 col-md-4 col-sm-6 studio">
-        <div className="vertical-item content-absolute">
-          <div className="item-media">
-            <img className="img_size_two" src="assets/images/2.jpg" alt="" />
-            <div className="media-links">
-              <div className="links-wrap">
-                <a
-                  className="p-view prettyPhoto "
-                  title=""
-                  data-gal="prettyPhoto[gal]"
-                  href="assets/images/2.jpg"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="isotope-item col-lg-3 col-md-4 col-sm-6 session">
-        <div className="vertical-item content-absolute">
-          <div className="item-media">
-            <img className="img_size_two" src="assets/images/3.jpg" alt="" />
-            <div className="media-links">
-              <div className="links-wrap">
-                <a
-                  className="p-view prettyPhoto "
-                  title=""
-                  data-gal="prettyPhoto[gal]"
-                  href="assets/images/3.jpg"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="isotope-item col-lg-3 col-md-4 col-sm-6 fashion">
-        <div className="vertical-item content-absolute">
-          <div className="item-media">
-            <img className="img_size_two" src="assets/images/5.jpg" alt="" />
-            <div className="media-links">
-              <div className="links-wrap">
-                <a
-                  className="p-view prettyPhoto "
-                  title=""
-                  data-gal="prettyPhoto[gal]"
-                  href="assets/images/5.jpg"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="isotope-item col-lg-3 col-md-4 col-sm-6 studio">
-        <div className="vertical-item content-absolute">
-          <div className="item-media">
-            <img className="img_size_two" src="assets/images/7.jpg" alt="" />
-            <div className="media-links">
-              <div className="links-wrap">
-                <a
-                  className="p-view prettyPhoto "
-                  title=""
-                  data-gal="prettyPhoto[gal]"
-                  href="assets/images/7.jpg"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="isotope-item col-lg-3 col-md-4 col-sm-6 session">
-        <div className="vertical-item content-absolute">
-          <div className="item-media">
-            <img className="img_size_two" src="assets/images/8.jpg" alt="" />
-            <div className="media-links">
-              <div className="links-wrap">
-                <a
-                  className="p-view prettyPhoto "
-                  title=""
-                  data-gal="prettyPhoto[gal]"
-                  href="assets/images/8.jpg"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div className="row">
-      <div className="col-sm-12 text-center margin_0">
-        <ul className="pagination ">
-          <li>
-            <Link to="#">
-              <span className="sr-only">Prev</span>
-              <i className="rt-icon2-chevron-thin-left" />
-            </Link>
-          </li>
-          <li className="active">
-            <Link to="#">1</Link>
-          </li>
-          <li>
-            <Link to="#">2</Link>
-          </li>
-          <li>
-            <Link to="#">3</Link>
-          </li>
-          <li>
-            <Link to="#">4</Link>
-          </li>
-          <li>
-            <Link to="#">5</Link>
-          </li>
-          <li>
-            <Link to="#">
-              <span className="sr-only">Next</span>
-              <i className="rt-icon2-chevron-thin-right" />
-            </Link>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-=======
     </section>
   );
 };
->>>>>>> Stashed changes
 
 export default Gallery;

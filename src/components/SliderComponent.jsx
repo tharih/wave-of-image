@@ -7,7 +7,7 @@ const SliderComponent = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 1024,
@@ -36,7 +36,7 @@ const SliderComponent = () => {
     ],
   };
   return (
-    <div>
+    <div className="ds ms intro_section page_mainslider">
       <Slider {...settings}>
         <div className="vertical-item maincarousel-item content-absolute cs">
           <div className="item-media">

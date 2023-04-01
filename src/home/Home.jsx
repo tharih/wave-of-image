@@ -4,25 +4,16 @@ import Contact from "../components/Contact";
 import Gallery from "../components/Gallery";
 import Service from "../components/Service";
 import SliderComponent from "../components/SliderComponent";
+import Slider_two from "../components/Slider_two";
 const Home = () => {
   return (
     <div>
-<<<<<<< Updated upstream
-       <Slider_one />
-        <About />
-        <Gallery />
-        <Service />
-        {/* <Slider_two /> */}
-        <Contact />
-      
-=======
       <SliderComponent />
-      {/* <About /> */}
+      <About />
       <Gallery />
-      {/* <Service /> */}
-      {/* <Slider_two /> */}
-      {/* <Contact /> */}
->>>>>>> Stashed changes
+      <Service />
+      <Slider_two />
+      <Contact />
     </div>
   );
 };
