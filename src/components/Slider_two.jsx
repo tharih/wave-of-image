@@ -47,13 +47,13 @@ const Slider_two = () => {
             </div>
             <div className="vertical-item maincarousel-item content-absolute">
               <div className="item-media">
-                <img className="img_size_three" src="assets/images/1.jpg" alt="" />
+                <img className="img_size_three" src="assets/images/3.jpg" alt="" />
                 <div className="media-links"></div>
               </div>
             </div>
             <div className="vertical-item maincarousel-item content-absolute">
               <div className="item-media">
-                <img className="img_size_three" src="assets/images/1.jpg" alt="" />
+                <img className="img_size_three" src="assets/images/15.jpg" alt="" />
                 <div className="media-links"></div>
               </div>
             </div>

@@ -20,9 +20,10 @@ const Footer = () => {
               {/* <img src="images/logo.png" alt=""> */}
             </Link>
             <p>
-              Ut wisi enim ad minim veniam, quis nostrud exerci tation
-              ullamcorper suscipit lobortis nisl uekt aliquip ex ea commodo
-              consequat duis auhtem veleum iriure dolor.
+            Hi, my name is Nuwan & I work as freelance retoucher and photographer..
+            </p>
+            <p>
+            Feel free to contact me for any of your Photography or retouching needs.
             </p>
             {/* <div class="size_small">
 									<i class="fa fa-cc-visa"></i>
