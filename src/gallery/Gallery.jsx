@@ -1,326 +1,141 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useRef, useState } from "react";
+import {motion,AnimatePresence} from 'framer-motion'
+import image01 from "../images/01.jpg";
+import image02 from "../images/02.jpg";
+import image03 from "../images/03.jpg";
+import image04 from "../images/04.jpg";
+import image05 from "../images/05.jpg";
+import image06 from "../images/06.jpg";
+import image07 from "../images/3.jpg";
+import image08 from "../images/1.jpg";
+import "./gallery.css";
+import Modal from "../components/Modal";
+import { randomGen } from "../utils/cal";
+
+const imageData = [
+  {
+    id: 0, 
+    category: "photography",
+    src: image01,
+  },{
+    id: 1, 
+    category: "retouching",
+    src: image02,
+  },{
+    id: 2, 
+    category: "photography",
+    src: image03,
+  },{
+    id: 3, 
+    category: "photography",
+    src: image04,
+  },{
+    id: 4, 
+    category: "retouching",
+    src: image05,
+  },
+  {
+    id: 5, 
+    category: "color grading",
+    src: image06,
+  }, {
+    id: 6, 
+    category: "color grading",
+    src: image07,
+  }, {
+    id: 7, 
+    category: "retouching",
+    src: image08,
+  }
+
+];
 
 const Gallery = () => {
+  const imageRef = useRef();
+  const [openModal, setOpenModal] = useState(false);
+  const [clickedImage, setClickedImage] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(null);
+  const [animateClass, setAnimateClass] = useState("second");
+  const [filterCategory, setFilterCategory] = useState("")
+  const handleClick = (item) => {
+    setCurrentIndex(item.id);
+    console.log(item.id);
+    setOpenModal(true);
+  };
+
+  const closeModal = () => {
+    setOpenModal(false);
+    setClickedImage(null);
+  };
+  const handleNext = () => {
+    currentIndex + 1 === imageData.length
+      ? setCurrentIndex(0)
+      : setCurrentIndex(currentIndex + 1);
+    setAnimateClass("fadeIn");
+  };
+  const handlePrev = () => {
+    currentIndex === 1
+      ? setCurrentIndex(imageData.length - 1)
+      : setCurrentIndex(currentIndex - 1);
+  };
+
   return (
-    <>
-  <section className="ds page_portfolio section_padding_70 columns_padding_0">
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-sm-12">
-          <div className="filters isotope_filters text-center">
-            <Link to="#" data-filter="*" className="selected">
+    <div className="ds page_portfolio section_padding_70 columns_padding_0">
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-sm-12">
+            <div className="filters isotope_filters text-center">
+              <span className="filter_btn" onClick={()=> setFilterCategory("")}>
               All
-            </Link>
-            <Link to="#" data-filter=".fashion">
-              Photography
-            </Link>
-            <Link to="#" data-filter=".studio">
-              Retouching
-            </Link>
-            <Link to="#" data-filter=".session">
-              Colour grading
-            </Link>
+              </span>
+              <span className="filter_btn" onClick={()=> setFilterCategory("photography")}>
+                Photography
+              </span>
+              <span className="filter_btn" onClick={()=> setFilterCategory("retouching")}>
+                Retouching
+              </span>
+              <span className="filter_btn" onClick={()=> setFilterCategory("color grading")}>
+                Color grading
+              </span>
+            </div>
           </div>
-          <div
-            className="isotope_container isotope row masonry-layout"
-            data-filters=".isotope_filters"
+        </div>
+      </div>
+      <div className="grid_wrapper">
+        {imageData
+        .filter(item => item.category.toLocaleLowerCase().includes(filterCategory))
+        .map((item, index) => (
+          <AnimatePresence>
+          <motion.div
+          initial={{scale: 0, opacity:0}}
+          whileInView={{
+            scale:1, opacity:1
+          }}
+          exit={{opacity: 0, scale:0}}
+          transition={{
+            duration: 1
+          }}
+            style={{ gridRowEnd: `span ${randomGen(3, 7)}` }}
+            key={index}
+            onClick={() => handleClick(item)}
           >
-            <div className="isotope-item col-lg-2 col-md-4 col-sm-6 photography">
-              <div className="vertical-item gallery-item content-absolute text-center cs">
-                <div className="item-media">
-                  <img src="assets/images/01.jpg" alt="" />
-                  <div className="media-links">
-                    <div className="links-wrap">
-                      <a
-                        className="p-view prettyPhoto "
-                        title=""
-                        data-gal="prettyPhoto[gal]"
-                        href="assets/images/gallery/22.jpg"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="item-content darken_gradient">
-                  <h4 className="item-meta greylinks"></h4>
-                </div>
-              </div>
-            </div>
-            <div className="isotope-item col-lg-4 col-md-4 col-sm-6 development programming">
-              <div className="vertical-item gallery-item content-absolute text-center cs">
-                <div className="item-media">
-                  <img src="assets/images/02.jpg" alt="" />
-                  <div className="media-links">
-                    <div className="links-wrap">
-                      <a
-                        className="p-view prettyPhoto "
-                        title=""
-                        data-gal="prettyPhoto[gal]"
-                        href="assets/images/gallery/02.jpg"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="item-content darken_gradient">
-                  <h4 className="item-meta greylinks"></h4>
-                </div>
-              </div>
-            </div>
-            <div className="isotope-item col-lg-2 col-md-4 col-sm-6 development photography">
-              <div className="vertical-item gallery-item content-absolute text-center cs">
-                <div className="item-media">
-                  <img src="assets/images/03.jpg" alt="" />
-                  <div className="media-links">
-                    <div className="links-wrap">
-                      <a
-                        className="p-view prettyPhoto "
-                        title=""
-                        data-gal="prettyPhoto[gal]"
-                        href="assets/images/gallery/03.jpg"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="item-content darken_gradient">
-                  <h4 className="item-meta greylinks"></h4>
-                </div>
-              </div>
-            </div>
-            <div className="isotope-item col-lg-2 col-md-4 col-sm-6 photography webdesign">
-              <div className="vertical-item gallery-item content-absolute text-center cs">
-                <div className="item-media">
-                  <img src="assets/images/04.jpg" alt="" />
-                  <div className="media-links">
-                    <div className="links-wrap">
-                      <a
-                        className="p-view prettyPhoto "
-                        title=""
-                        data-gal="prettyPhoto[gal]"
-                        href="assets/images/gallery/04.jpg"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="item-content darken_gradient">
-                  <h4 className="item-meta greylinks"></h4>
-                </div>
-              </div>
-            </div>
-            <div className="isotope-item col-lg-2 col-md-4 col-sm-6 development programming">
-              <div className="vertical-item gallery-item content-absolute text-center cs">
-                <div className="item-media">
-                  <img src="assets/images/05.jpg" alt="" />
-                  <div className="media-links">
-                    <div className="links-wrap">
-                      <a
-                        className="p-view prettyPhoto "
-                        title=""
-                        data-gal="prettyPhoto[gal]"
-                        href="assets/images/gallery/05.jpg"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="item-content darken_gradient">
-                  <h4 className="item-meta greylinks"></h4>
-                </div>
-              </div>
-            </div>
-            <div className="isotope-item col-lg-2 col-md-4 col-sm-6 development photography">
-              <div className="vertical-item gallery-item content-absolute text-center cs">
-                <div className="item-media">
-                  <img src="assets/images/06.jpg" alt="" />
-                  <div className="media-links">
-                    <div className="links-wrap">
-                      <a
-                        className="p-view prettyPhoto "
-                        title=""
-                        data-gal="prettyPhoto[gal]"
-                        href="assets/images/gallery/06.jpg"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="item-content darken_gradient">
-                  <h4 className="item-meta greylinks"></h4>
-                </div>
-              </div>
-            </div>
-            <div className="isotope-item col-lg-2 col-md-4 col-sm-6 development photography">
-              <div className="vertical-item gallery-item content-absolute text-center cs">
-                <div className="item-media">
-                  <img src="assets/images/1.jpg" alt="" />
-                  <div className="media-links">
-                    <div className="links-wrap">
-                      <a
-                        className="p-view prettyPhoto "
-                        title=""
-                        data-gal="prettyPhoto[gal]"
-                        href="assets/images/gallery/22.jpg"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="item-content darken_gradient">
-                  <h4 className="item-meta greylinks"></h4>
-                </div>
-              </div>
-            </div>
-            <div className="isotope-item col-lg-2 col-md-4 col-sm-6 photography webdesign">
-              <div className="vertical-item gallery-item content-absolute text-center cs">
-                <div className="item-media">
-                  <img src="assets/images/2.jpg" alt="" />
-                  <div className="media-links">
-                    <div className="links-wrap">
-                      <a
-                        className="p-view prettyPhoto "
-                        title=""
-                        data-gal="prettyPhoto[gal]"
-                        href="assets/images/gallery/08.jpg"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="item-content darken_gradient">
-                  <h4 className="item-meta greylinks"></h4>
-                </div>
-              </div>
-            </div>
-            <div className="isotope-item col-lg-2 col-md-4 col-sm-6 development programming">
-              <div className="vertical-item gallery-item content-absolute text-center cs">
-                <div className="item-media">
-                  <img src="assets/images/3.jpg" alt="" />
-                  <div className="media-links">
-                    <div className="links-wrap">
-                      <a
-                        className="p-view prettyPhoto "
-                        title=""
-                        data-gal="prettyPhoto[gal]"
-                        href="assets/images/gallery/09.jpg"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="item-content darken_gradient">
-                  <h4 className="item-meta greylinks"></h4>
-                </div>
-              </div>
-            </div>
-            <div className="isotope-item col-lg-4 col-md-4 col-sm-6 development programming">
-              <div className="vertical-item gallery-item content-absolute text-center cs">
-                <div className="item-media">
-                  <img src="assets/images/5.jpg" alt="" />
-                  <div className="media-links">
-                    <div className="links-wrap">
-                      <a
-                        className="p-view prettyPhoto "
-                        title=""
-                        data-gal="prettyPhoto[gal]"
-                        href="assets/images/gallery/21.jpg"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="item-content darken_gradient">
-                  <h4 className="item-meta greylinks"></h4>
-                </div>
-              </div>
-            </div>
-            <div className="isotope-item col-lg-2 col-md-4 col-sm-6 webdesign photography development">
-              <div className="vertical-item gallery-item content-absolute text-center cs">
-                <div className="item-media">
-                  <img src="assets/images/6.jpg" alt="" />
-                  <div className="media-links">
-                    <div className="links-wrap">
-                      <a
-                        className="p-view prettyPhoto "
-                        title=""
-                        data-gal="prettyPhoto[gal]"
-                        href="assets/images/gallery/11.jpg"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="item-content darken_gradient">
-                  <h4 className="item-meta greylinks"></h4>
-                </div>
-              </div>
-            </div>
-            <div className="isotope-item col-lg-2 col-md-4 col-sm-6 webdesign photography">
-              <div className="vertical-item gallery-item content-absolute text-center cs">
-                <div className="item-media">
-                  <img src="assets/images/7.jpg" alt="" />
-                  <div className="media-links">
-                    <div className="links-wrap">
-                      <a
-                        className="p-view prettyPhoto "
-                        title=""
-                        data-gal="prettyPhoto[gal]"
-                        href="assets/images/gallery/12.jpg"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="item-content darken_gradient">
-                  <h4 className="item-meta greylinks"></h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* eof .isotope_container.row */}
-        </div>
+            <img ref={imageRef} src={item.src} alt="" />
+          </motion.div>
+          </AnimatePresence>
+        ))}
       </div>
+      {openModal && (
+        <Modal
+          handleNext={handleNext}
+          closeModal={closeModal}
+          handlePrev={handlePrev}
+          imageData={imageData}
+          currentIndex={currentIndex}
+          animateClass={"fadeIn"}
+        />
+      )}
     </div>
-  </section>
-  <section className="ds section_padding_bottom_80">
-    <div className="container">
-      <div className="row">
-        <div className="col-sm-12 text-center">
-          <a href="#" className="theme_button inverse wide_button margin_0">
-            Load More
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section className="ds ms section_padding_30 page_social">
-    <div className="container">
-      <div className="row topmargin_20 bottommargin_10">
-        <div className="col-sm-12 text-center">
-          <div className="page_social_icons">
-            <a
-              className="social-icon color-bg-icon soc-facebook"
-              href="#"
-              title="Facebook"
-            />
-            <a
-              className="social-icon color-bg-icon soc-twitter"
-              href="#"
-              title="Twitter"
-            />
-            <a
-              className="social-icon color-bg-icon soc-google"
-              href="#"
-              title="Google"
-            />
-            <a
-              className="social-icon color-bg-icon soc-linkedin"
-              href="#"
-              title="LinkedIn"
-            />
-            <a
-              className="social-icon color-bg-icon soc-pinterest"
-              href="#"
-              title="Pinterest"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</>
+  );
+};
 
-  )
-}
-
-export default Gallery
+export default Gallery;

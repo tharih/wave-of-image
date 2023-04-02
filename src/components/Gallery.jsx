@@ -1,35 +1,27 @@
+
 import React, { useEffect } from "react";
-import $ from "jquery";
-import "jquery-ui-dist/jquery-ui";
 import { Link } from "react-router-dom";
 
-const Gallery = () => {
-  useEffect(() => {
-    //bootstrap tab - show first tab
-    $(".nav-tabs").each(function () {
-      $(this).find("a").first().tab("show");
-    });
-    $(".tab-content").each(function () {
-      $(this).find(".tab-pane").first().addClass("fade in");
-    });
-    //bootstrap collapse - show first tab
-    $(".panel-group").each(function () {
-      $(this).find("a").first().filter(".collapsed").trigger("click");
-    });
-  }, []);
 
+const Gallery = () => {
   return (
     <section className="ds ms page_models models_portrait gorizontal_padding section_padding_70">
       <div className="container-fluid">
         <div className="row boxed-padding bottommargin_40">
           <div className="col-lg-7">
             <div className="filters isotope_filters inline-block margin_0">
-              <Link data-filter="*" className="selected">
+              <Link to="/" className="selected">
                 All
               </Link>
-              <Link data-filter=".fashion">Photography</Link>
-              <Link data-filter=".studio">Retouching</Link>
-              <Link data-filter=".session">Colour grading</Link>
+              <Link to="/" data-filter=".fashion">
+                Photography
+              </Link>
+              <Link to="/" data-filter=".studio">
+                Retouching
+              </Link>
+              <Link to="/" data-filter=".session">
+                Colour grading
+              </Link>
             </div>
           </div>
           <div className="col-lg-5 text-lg-right">
