@@ -11,6 +11,7 @@ import image08 from "../images/1.jpg";
 import "./gallery.css";
 import Modal from "../components/Modal";
 import { randomGen } from "../utils/cal";
+import { SanityClient } from "@sanity/client";
 
 const imageData = [
   {
@@ -57,6 +58,9 @@ const Gallery = () => {
   const [currentIndex, setCurrentIndex] = useState(null);
   const [animateClass, setAnimateClass] = useState("second");
   const [filterCategory, setFilterCategory] = useState("")
+
+
+
   const handleClick = (item) => {
     setCurrentIndex(item.id);
     console.log(item.id);
@@ -79,6 +83,7 @@ const Gallery = () => {
       : setCurrentIndex(currentIndex - 1);
   };
 
+  console.log(data);
   return (
     <div className="ds page_portfolio section_padding_70 columns_padding_0">
       <div className="container-fluid">

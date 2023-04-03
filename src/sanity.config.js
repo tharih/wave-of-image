@@ -4,7 +4,8 @@ import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
 
 export default defineConfig({
-  name: 'default',
+  basePath:"/studio",
+  name: 'wave-of-image',
   title: 'wave-of-image',
 
   projectId: 'xg3ihi80',
