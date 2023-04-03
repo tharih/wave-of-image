@@ -1,8 +1,29 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useEffect, useState } from "react";
+import { fetchSecondSlider } from "../utils/fetchSecondSlider";
 
 const Slider_two = () => {
+  const [Slider_two, setSlider_two] = useState([])
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() =>{
+    setLoading(true)
+    fetchSecondSlider()
+    .then((res) => {
+      setSlider_two(res);
+      // console.log(res);
+    })
+    .catch((error)=>{
+      console.log(error);
+      
+    })
+    .finally(()=>{
+      setLoading(false)
+    })
+  },[])
+
   const settings = {
     infinite: true,
     speed: 500,

@@ -10,6 +10,8 @@ import image06 from "../images/06.jpg";
 import image07 from "../images/3.jpg";
 import image08 from "../images/1.jpg";
 import VideoModal from "../components/VideoModal";
+import { fetchVideo } from "../utils/fetchVideo";
+import { useEffect } from "react";
 
 const imageData = [
   image01,
@@ -27,6 +29,25 @@ const imageData = [
 
 const VideoPage = () => {
   const [openModal, setOpenModal] = useState(false);
+  const [video, setVideo] = useState([])
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() =>{
+    setLoading(true)
+    fetchVideo()
+    .then((res) => {
+      setVideo(res);
+    })
+    .catch((error)=>{
+      console.log(error);
+      
+    })
+    .finally(()=>{
+      setLoading(false)
+    })
+  },[])
+
+
   const handleVideoOpen = () => {
     setOpenModal(true);
   };

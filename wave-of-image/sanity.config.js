@@ -1,10 +1,9 @@
 import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
-import {schemaTypes} from './schemas'
+import {schemaTypes} from '../src/schemas'
 
 export default defineConfig({
-  basePath:"/studio",
   name: 'wave-of-image',
   title: 'wave-of-image',
 

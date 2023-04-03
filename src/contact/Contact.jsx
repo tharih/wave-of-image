@@ -25,8 +25,8 @@ const Contact = () => {
       <div className="row topmargin_10 bottommargin_20">
         <div className="col-sm-4">
           <div className="teaser text-center">
-            <h4 className="bottommargin_20">Reception</h4>
-            Helena
+            <h4 className="bottommargin_20">Address</h4>
+            Kurunagala, Kurunagala
             <br />
             <span className="highlight">
               <Link to="https://html.modernwebtemplates.com/cdn-cgi/l/email-protection"
@@ -41,7 +41,7 @@ const Contact = () => {
         </div>
         <div className="col-sm-4 with_border">
           <div className="teaser text-center">
-            <h4 className="bottommargin_20">Booking</h4>
+            <h4 className="bottommargin_20">Email</h4>
             James
             <br />
             <span className="highlight">
@@ -57,7 +57,7 @@ const Contact = () => {
         </div>
         <div className="col-sm-4">
           <div className="teaser text-center">
-            <h4 className="bottommargin_20">President</h4>
+            <h4 className="bottommargin_20">Contact Number</h4>
             Robert
             <br />
             <span className="highlight">

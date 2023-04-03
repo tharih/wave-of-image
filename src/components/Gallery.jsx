@@ -1,9 +1,28 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { imageData } from "../data/mockData";
 import {motion } from 'framer-motion'
 import '../gallery/gallery.css'
+import { fetchGallery } from "../utils/fetchGallery";
 const Gallery = () => {
+  const [image, setImage] = useState([])
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() =>{
+    setLoading(true)
+    fetchGallery()
+    .then((res) => {
+      setImage(res);
+      // console.log(res);
+    })
+    .catch((error)=>{
+      console.log(error);
+      
+    })
+    .finally(()=>{
+      setLoading(false)
+    })
+  },[])
   return (
     <section className="ds ms page_models models_portrait gorizontal_padding section_padding_70">
       <div className="container-fluid">

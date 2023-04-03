@@ -1,8 +1,8 @@
 import { defineField, defineType } from "sanity";
 
 export default defineType({
-    name: "gallery",
-    title: "Gallery",
+    name: "video",
+    title: "Video",
     type: "document",
     fields: [
         defineField({
@@ -18,6 +18,11 @@ export default defineType({
         defineField({
             name: "alt",
             title:"Alt",
+            type: "string",
+        }),
+        defineField({
+            name: "link",
+            title:"YouTube Link",
             type: "string",
         }),
         defineField({
