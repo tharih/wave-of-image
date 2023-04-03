@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'wave-of-image',
 
-  projectId: '2kysjfov',
+  projectId: 'xg3ihi80',
   dataset: 'production',
 
   plugins: [deskTool(), visionTool()],
