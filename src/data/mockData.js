@@ -55,3 +55,5 @@ export const imageData = [
     }
   
   ];
+
+  // updated 
