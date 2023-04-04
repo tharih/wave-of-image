@@ -95,7 +95,7 @@ const Contact = () => {
     <div className="container">
       <div className="row">
         <div className="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 text-center">
-          <h2 className="big margin_0">Contact Us</h2>
+          <h2 className="big margin_0">Contact Me</h2>
           <h2 className="muellerhoff topmargin_5 bottommargin_50 highlight">
             Contact Form
           </h2>

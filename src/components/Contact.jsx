@@ -41,7 +41,7 @@ const Contact = () => {
     <div className="container">
       <div className="row">
         <div className="col-sm-12 text-center">
-          <h2 className="big margin_0">Contact Us</h2>
+          <h2 className="big margin_0">Contact Me</h2>
           <h2 className="muellerhoff topmargin_5 bottommargin_50 highlight">
             Contact Form
           </h2>
@@ -57,7 +57,7 @@ const Contact = () => {
           </p>
           <p className="bottommargin_20">
             <span className="grey fontsize_12 text-uppercase bold">
-              Call us:
+              Call me:
             </span>
             <br /> (+94) 77-123467, (+94) 77-123467
           </p>
