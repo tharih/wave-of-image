@@ -3,26 +3,27 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useEffect, useState } from "react";
 import { fetchSecondSlider } from "../utils/fetchSecondSlider";
+import { urlFor } from "../client";
+import "./styles/slider.css";
 
 const Slider_two = () => {
-  const [Slider_two, setSlider_two] = useState([])
-  const [loading, setLoading] = useState(false)
+  const [Slider_two, setSlider_two] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() =>{
-    setLoading(true)
+  useEffect(() => {
+    setLoading(true);
     fetchSecondSlider()
-    .then((res) => {
-      setSlider_two(res);
-      // console.log(res);
-    })
-    .catch((error)=>{
-      console.log(error);
-      
-    })
-    .finally(()=>{
-      setLoading(false)
-    })
-  },[])
+      .then((res) => {
+        setSlider_two(res);
+        // console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
 
   const settings = {
     infinite: true,
@@ -56,47 +57,27 @@ const Slider_two = () => {
       },
     ],
   };
+
+  if (loading) return <div>Loading....</div>;
   return (
     <div className="ds section_padding_70 gorizontal_padding">
       <Slider {...settings}>
-
-      <div className="vertical-item maincarousel-item content-absolute">
-              <div className="item-media">
-                <img className="img_size_three" src="assets/images/1.jpg" alt="" />
-                <div className="media-links"></div>
-              </div>
+        {Slider_two.map((item, index) => (
+          <div
+            key={index}
+            className="vertical-item maincarousel-item content-absolute"
+          >
+            <div className="item-box">
+              <img
+                className="slider_two_image"
+                src={urlFor(item.mainImage.asset._ref).url()}
+                alt=""
+              />
+              <div className="media-links"></div>
             </div>
-            <div className="vertical-item maincarousel-item content-absolute">
-              <div className="item-media">
-                <img className="img_size_three" src="assets/images/3.jpg" alt="" />
-                <div className="media-links"></div>
-              </div>
-            </div>
-            <div className="vertical-item maincarousel-item content-absolute">
-              <div className="item-media">
-                <img className="img_size_three" src="assets/images/15.jpg" alt="" />
-                <div className="media-links"></div>
-              </div>
-            </div>
-            <div className="vertical-item maincarousel-item content-absolute">
-              <div className="item-media">
-                <img className="img_size_three" src="assets/images/1.jpg" alt="" />
-                <div className="media-links"></div>
-              </div>
-            </div>
-            <div className="vertical-item maincarousel-item content-absolute">
-              <div className="item-media">
-                <img className="img_size_three" src="assets/images/1.jpg" alt="" />
-                <div className="media-links"></div>
-              </div>
-            </div>
-            <div className="vertical-item maincarousel-item content-absolute">
-              <div className="item-media">
-                <img className="img_size_three" src="assets/images/1.jpg" alt="" />
-                <div className="media-links"></div>
-              </div>
-            </div>
-    {/* <section className="ds section_padding_70 gorizontal_padding">
+          </div>
+        ))}
+        {/* <section className="ds section_padding_70 gorizontal_padding">
   <div className="container-fluid">
     <div className="row">
       <div className="col-sm-12">
@@ -162,9 +143,8 @@ const Slider_two = () => {
   </div>
 </section> */}
       </Slider>
-</div>
+    </div>
+  );
+};
 
-  )
-}
-
-export default Slider_two
+export default Slider_two;

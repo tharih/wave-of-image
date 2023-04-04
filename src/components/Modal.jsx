@@ -2,6 +2,7 @@ import "../gallery/gallery.css";
 import { AnimatePresence, motion } from "framer-motion";
 import { BsChevronRight, BsChevronLeft } from "react-icons/bs";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import { urlFor } from "../client";
 
 const Modal = ({
   clickedImage,
@@ -25,7 +26,11 @@ const Modal = ({
       transition={{ duration: 0.5 }}
       className="overlay dismiss"
     >
-      <img src={imageData[currentIndex].src} alt="" className={animateClass} />
+      <img
+        src={urlFor(imageData[currentIndex].image.asset._ref).url()}
+        alt=""
+        className={animateClass}
+      />
       <span className="dismiss" onClick={closeModal}>
         <AiOutlineCloseCircle className="close_btn" />
       </span>

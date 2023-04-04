@@ -13,6 +13,11 @@ export default defineType({
         hotspot: true,
       },
     }),
-    
+    defineField({
+      name: "alt",
+      title: "Alt Text",
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    }),
   ],
 });

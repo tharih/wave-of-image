@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { DefaultPlayer as Video } from "react-html5video";
 import "react-html5video/dist/styles.css";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-const VideoModal = ({ closeModal }) => {
+const VideoModal = ({ closeModal, linkVideo }) => {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
@@ -29,7 +29,7 @@ const VideoModal = ({ closeModal }) => {
       <iframe
         width="90%"
         height="700"
-        src="https://www.youtube.com/embed/dui539QzsVQ"
+        src={linkVideo}
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

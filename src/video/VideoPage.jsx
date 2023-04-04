@@ -12,6 +12,8 @@ import image08 from "../images/1.jpg";
 import VideoModal from "../components/VideoModal";
 import { fetchVideo } from "../utils/fetchVideo";
 import { useEffect } from "react";
+import { urlFor } from "../client";
+import FilterComp from "../components/filterComp";
 
 const imageData = [
   image01,
@@ -29,65 +31,66 @@ const imageData = [
 
 const VideoPage = () => {
   const [openModal, setOpenModal] = useState(false);
-  const [video, setVideo] = useState([])
-  const [loading, setLoading] = useState(false)
+  const [video, setVideo] = useState([]);
+  console.log("🚀 ~ file: VideoPage.jsx:34 ~ VideoPage ~ video:", video);
+  const [loading, setLoading] = useState(false);
+  const [linkVideo, setLinkVideo] = useState("");
+  const [filterCategory, setFilterCategory] = useState("");
 
-  useEffect(() =>{
-    setLoading(true)
+  useEffect(() => {
+    setLoading(true);
     fetchVideo()
-    .then((res) => {
-      setVideo(res);
-    })
-    .catch((error)=>{
-      console.log(error);
-      
-    })
-    .finally(()=>{
-      setLoading(false)
-    })
-  },[])
+      .then((res) => {
+        setVideo(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
 
-
-  const handleVideoOpen = () => {
+  const handleVideoOpen = (item) => {
+    setLinkVideo(item.link);
     setOpenModal(true);
   };
   const closeModal = () => {
     setOpenModal(false);
   };
+
+  if (loading) return <div>loading....</div>;
   return (
     <>
       <section className="ds page_portfolio section_padding_70 columns_padding_0">
         <div className="container-fluid">
           <div className="row">
             <div className="col-sm-12">
-              <div className="filters isotope_filters text-center">
-                <a href="#" data-filter="*" className="selected">
-                  All
-                </a>
-                <a href="#" data-filter=".fashion">
-                  Photography
-                </a>
-                <a href="#" data-filter=".studio">
-                  Retouching
-                </a>
-                <a href="#" data-filter=".session">
-                  Colour grading
-                </a>
-              </div>
+              <FilterComp setFilterCategory={setFilterCategory} />
               <div
                 className="isotope_container isotope row masonry-layout"
                 data-filters=".isotope_filters"
               >
                 <div className="grid_wrapper">
-                  {imageData.map((item, index) => (
-                    <div
-                      style={{ gridRowEnd: `span 4` }}
-                      key={index}
-                      onClick={() => handleVideoOpen(item, index)}
-                    >
-                      <img src={item} alt="" />
-                    </div>
-                  ))}
+                  {video &&
+                    video
+                      .filter((item) =>
+                        item.category.title
+                          .toLocaleLowerCase()
+                          .includes(filterCategory)
+                      )
+                      .map((item, index) => (
+                        <div
+                          style={{ gridRowEnd: `span 4` }}
+                          key={index}
+                          onClick={() => handleVideoOpen(item, index)}
+                        >
+                          <img
+                            src={urlFor(item.image.asset._ref).url()}
+                            alt=""
+                          />
+                        </div>
+                      ))}
                 </div>
               </div>
               {/* eof .isotope_container.row */}
@@ -95,7 +98,9 @@ const VideoPage = () => {
           </div>
         </div>
       </section>
-      {openModal && <VideoModal closeModal={closeModal} />}
+      {openModal && (
+        <VideoModal closeModal={closeModal} linkVideo={linkVideo} />
+      )}
     </>
   );
 };

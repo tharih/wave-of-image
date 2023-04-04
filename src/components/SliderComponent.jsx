@@ -6,24 +6,23 @@ import { fetchMainSlider } from "../utils/fetchMainSlider";
 import { useEffect } from "react";
 
 const SliderComponent = () => {
-  const [slider, setSlider] = useState([])
-  const [loading, setLoading] = useState(false)
+  const [slider, setSlider] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() =>{
-    setLoading(true)
+  useEffect(() => {
+    setLoading(true);
     fetchMainSlider()
-    .then((res) => {
-      setSlider(res);
-      // console.log(res);
-    })
-    .catch((error)=>{
-      console.log(error);
-      
-    })
-    .finally(()=>{
-      setLoading(false)
-    })
-  },[])
+      .then((res) => {
+        setSlider(res);
+        // console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
   const settings = {
     infinite: true,
     speed: 500,

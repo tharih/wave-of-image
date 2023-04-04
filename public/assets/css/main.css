@@ -11281,3 +11281,14 @@ isotope portfolio and gallery pos
 .checkbox-slider--b-flat input + span:before {
   box-shadow: none;
 }
+
+.slick-arrow {
+}
+
+.slick-next::before {
+  content: "<";
+  width: 40px;
+  height: 40px;
+}
+.slick-prev {
+}

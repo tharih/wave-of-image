@@ -1678,6 +1678,15 @@
     get-it "^8.1"
     rxjs "7"
 
+"@sanity/client@^5.4.2":
+  version "5.4.2"
+  resolved "https://registry.yarnpkg.com/@sanity/client/-/client-5.4.2.tgz#253b11d76a058de1fe6ec4f191d5872c7825fa80"
+  integrity sha512-M/ebzTGwYq+NDGMfBWxKtwtmCRJbBvXxAIQXu/J0vxnr8mXKw8gBQ7GaG0tI4WJ54w5sI6pnrD6mPiKdRHVNYw==
+  dependencies:
+    "@sanity/eventsource" "5"
+    get-it "^8.1"
+    rxjs "7"
+
 "@sanity/color@^2.1.20", "@sanity/color@^2.2.3":
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/@sanity/color/-/color-2.2.5.tgz#6b28578573859495ed1ffd5491322cb8e90b3e07"
