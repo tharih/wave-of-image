@@ -1,7 +1,24 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_406t204', 'template_djutns2', form.current, 'JIoITWCRFErW3lGUM')
+      .then((result) => {
+          console.log(result.text);
+          console.log("message sent");
+      }, (error) => {
+          console.log(error.text);
+      });
+  
+
+
+  }
   return (
     <>
   <section className="ds map muted_section">
@@ -63,7 +80,9 @@ const Contact = () => {
           <form
             className="contact-form row"
             method="post"
-            action="https://html.modernwebtemplates.com/"
+            // action="https://html.modernwebtemplates.com/"
+            onSubmit={sendEmail}
+            ref={form}
           >
             <div className="col-sm-6">
               <div className="form-group">
@@ -76,7 +95,7 @@ const Contact = () => {
                   aria-required="true"
                   size={30}
                   defaultValue=""
-                  name="name"
+                  name="user_name"
                   id="name"
                   className="form-control with-icon"
                   placeholder=""
@@ -93,7 +112,7 @@ const Contact = () => {
                   aria-required="true"
                   size={30}
                   defaultValue=""
-                  name="email"
+                  name="user_email"
                   id="email"
                   className="form-control with-icon"
                   placeholder=""
@@ -110,16 +129,16 @@ const Contact = () => {
                   aria-required="true"
                   size={30}
                   defaultValue=""
-                  name="phone"
+                  name="user_number"
                   id="phone"
                   className="form-control with-icon"
                   placeholder=""
                 />
                 <i className="rt-icon2-phone5" />
               </div>
-              <div className="form-group bottommargin_0">
+              {/* <div className="form-group bottommargin_0">
                 <label htmlFor="theme" className="sr-only">
-                  Message theme
+                  Message 
                   <span className="required">*</span>
                 </label>
                 <input
@@ -127,13 +146,13 @@ const Contact = () => {
                   aria-required="true"
                   size={30}
                   defaultValue=""
-                  name="theme"
+                  name="message"
                   id="theme"
                   className="form-control with-icon"
                   placeholder=""
                 />
                 <i className="rt-icon2-bulb" />
-              </div>
+              </div> */}
             </div>
             <div className="col-sm-6">
               <div className="form-group">
@@ -156,6 +175,7 @@ const Contact = () => {
                 type="submit"
                 id="contact_form_submit"
                 name="contact_submit"
+                value="Send"
                 className="theme_button color1 bottommargin_0"
               >
                 Send

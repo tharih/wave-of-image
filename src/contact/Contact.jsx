@@ -1,7 +1,23 @@
 import React from 'react'
+import { useRef } from 'react';
 import { Link } from 'react-router-dom'
+import emailjs from '@emailjs/browser';
+
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_406t204', 'template_djutns2', form.current, 'JIoITWCRFErW3lGUM')
+      .then((result) => {
+          console.log(result.text);
+          console.log("message sent");
+      }, (error) => {
+          console.log(error.text);
+      });
+    }
   return (
     <>
   <section className="ds map muted_section">
@@ -86,7 +102,9 @@ const Contact = () => {
           <form
             className="contact-form"
             method="post"
-            action="https://html.modernwebtemplates.com/"
+            // action="https://html.modernwebtemplates.com/"
+             onSubmit={sendEmail}
+            ref={form}
           >
             <div className="form-group">
               <label htmlFor="name" className="sr-only">
@@ -98,10 +116,26 @@ const Contact = () => {
                 aria-required="true"
                 size={30}
                 defaultValue=""
-                name="name"
+                name="user_name"
                 id="name"
                 className="form-control text-center"
                 placeholder="Full name"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email" className="sr-only">
+                Email address
+                <span className="required">*</span>
+              </label>
+              <input
+               type="email"
+                  aria-required="true"
+                  size={30}
+                  defaultValue=""
+                  name="user_email"
+                  id="email"
+                className="form-control text-center"
+                placeholder="Email"
               />
             </div>
             <div className="form-group">
@@ -114,7 +148,7 @@ const Contact = () => {
                 aria-required="true"
                 size={30}
                 defaultValue=""
-                name="phone"
+                name="user_number"
                 id="phone"
                 className="form-control text-center"
                 placeholder="Phone number"
@@ -139,6 +173,7 @@ const Contact = () => {
               type="submit"
               id="contact_form_submit"
               name="contact_submit"
+              value="Send"
               className="theme_button color1"
             >
               Send
