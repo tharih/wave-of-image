@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { useState } from "react";
 import { fetchMainSlider } from "../utils/fetchMainSlider";
 import { useEffect } from "react";
+import { urlFor } from "../client";
 
 const SliderComponent = () => {
   const [slider, setSlider] = useState([]);
@@ -58,13 +59,15 @@ const SliderComponent = () => {
   return (
     <div className="ds ms intro_section page_mainslider">
       <Slider {...settings}>
-        <div className="vertical-item maincarousel-item content-absolute cs">
+      {slider.map((item, index) => (
+        <div key={index} className="vertical-item maincarousel-item content-absolute cs">
           <div className="item-media">
-            <img className="img_size" src="assets/images/02.jpg" alt="" />
+            <img className="img_size" src={urlFor(item.mainImage.asset._ref).url()} alt="" />
             <div className="media-links"></div>
           </div>
         </div>
-        <div className="vertical-item maincarousel-item content-absolute cs">
+        ))}
+        {/* <div className="vertical-item maincarousel-item content-absolute cs">
           <div className="item-media">
             <img className="img_size" src="assets/images/03.jpg" alt="" />
             <div className="media-links"></div>
@@ -87,7 +90,7 @@ const SliderComponent = () => {
             <img className="img_size" src="assets/images/06.jpg" alt="" />
             <div className="media-links"></div>
           </div>
-        </div>
+        </div> */}
       </Slider>
     </div>
   );

@@ -6,13 +6,17 @@ import "../gallery/gallery.css";
 import { fetchGallery } from "../utils/fetchGallery";
 import FilterComp from "./filterComp";
 import { urlFor } from "../client";
+import { fetchLatestGallery } from "../utils/fetchLatestGallery";
 const Gallery = () => {
   const [image, setImage] = useState([]);
   const [loading, setLoading] = useState(false);
   const [filterCategory, setFilterCategory] = useState("");
+
+
+
   useEffect(() => {
     setLoading(true);
-    fetchGallery()
+    fetchLatestGallery()
       .then((res) => {
         setImage(res);
         // console.log(res);
@@ -60,6 +64,8 @@ const Gallery = () => {
               ))}
           </div>
         </div>
+        
+
       </div>
     </section>
   );

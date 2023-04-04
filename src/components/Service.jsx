@@ -49,7 +49,7 @@ const Service = () => {
                           </h4>
                         </div>
                       </div>
-                      <div className="media bottommargin_30">
+                      {/* <div className="media bottommargin_30">
                         <div className="media-left">
                           <div className="service-media" />
                         </div>
@@ -58,7 +58,7 @@ const Service = () => {
                             <p>Courses from Professional Models</p>
                           </h4>
                         </div>
-                      </div>
+                      </div> */}
                       <div className="media bottommargin_30">
                         <div className="media-left">
                           <div className="service-media" />

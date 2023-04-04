@@ -89,16 +89,16 @@ const Footer = () => {
           <div className="widget widget_banner">
             <div className="vertical-item content-absolute ds">
               <div className="item-media">
-                <img src="assets/images/models_square/01.jpg" alt="" />
+                <img src="assets/images/footer1.png" alt="" />
               </div>
               <div className="item-content">
                 {/* <span class="main_bg_color">
 											New
 										</span> */}
-                <h2>
+                {/* <h2>
                   Watch your
                   <br /> Beauty
-                </h2>
+                </h2> */}
               </div>
               
             </div>
