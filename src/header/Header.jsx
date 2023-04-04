@@ -2,7 +2,23 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import $ from "jquery";
 import "jquery-ui-dist/jquery-ui";
+import "./header.css"
+import { useState } from "react";
 const Header = () => {
+  // const [clicked, setClicked] = useState(false)
+
+  // handleClick = () =>{
+  //   setClicked({clicked})
+  // }
+
+  // const [showMobileMenu, setShowMobileMenu] = useState(false)
+
+  // const handleShowMobileMenu = () => {
+  //   setShowMobileMenu(true);
+  // };
+  // const handleCloseMobileMenu = () => {
+  //   setShowMobileMenu(false);
+  // };
   useEffect(() => {
     if ($().scrollbar) {
       $('[class*="scrollbar-"]').scrollbar();
@@ -164,10 +180,10 @@ const Header = () => {
           </div>
           <div className="col-md-6 text-center">
             {/* main nav start */}
-            <nav className="mainmenu_wrapper">
-              <ul className="mainmenu nav sf-menu">
-                <li className="active">
-                  <Link to="/">Home</Link>
+            <div className="">
+              <ul id="navbar" className="">
+                <li >
+                  <Link className="active" to="/">Home</Link>
                 </li>
                 <li>
                   <Link to="/about">About</Link>
@@ -185,11 +201,17 @@ const Header = () => {
                 </li>
                 {/* eof contacts */}
               </ul>
-            </nav>
+            </div>
             {/* eof main nav */}
-            <span className="toggle_menu">
+            {/* <span className="toggle_menu">
               <span />
-            </span>
+            </span> */}
+            <div id="mobile" >
+              {/* <i id="bar" className={clicked? "fa fa-times" : "fa fa-bars"}></i> */}
+              <i className="fa fa-bars"></i>
+              <i className="fa fa-times"></i>
+
+            </div>
           </div>
           <div className="col-md-3 col-sm-6 header-contacts text-center hidden-xs">
             <div className="highlight inline-block fontsize_30 thin">

@@ -6,7 +6,7 @@ const About = () => {
     <section className="ds intro_section">
     <div className="flexslider vertical-nav">
      
-        <div>
+       
           <img src="assets/images/slide01.png" alt="" />
           <div className="container">
             <div className="row">
@@ -47,7 +47,7 @@ const About = () => {
                         to="/about"
                         className="theme_button color1 topmargin_20"
                       >
-                        About us
+                        About me
                       </Link>
                     </div>
                   </div>
@@ -62,7 +62,7 @@ const About = () => {
           {/* eof .container */}
         </div>
      
-    </div>
+    
     {/* eof flexslider */}
   </section>
   

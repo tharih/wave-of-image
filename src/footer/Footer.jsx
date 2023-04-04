@@ -114,7 +114,7 @@ const Footer = () => {
           <p className="darklinks">
             © Wave of image | Created with
             <i className="rt-icon2-heart highlight" /> by
-            <Link to="http://modernwebtemplates.com/">
+            <Link style={{paddingLeft:"5px"}} to="https://radiant-spark-technology-1uo8.vercel.app/">
               Radiant Spark Technology
             </Link>
           </p>
