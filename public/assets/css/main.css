@@ -2133,7 +2133,7 @@ body.boxed {
 
 /**light section - .ls*/
 .ls {
-  background-color: #ffffff;
+  background-color: #000000;
   color: #818181;
 }
 
@@ -2232,11 +2232,11 @@ body.boxed {
 }
 
 .ls .darklinks a {
-  color: #1a1a1a;
+  color: #818181;
 }
 
 .ls .darklinks a:hover {
-  color: #fd61e3;
+  color: #ffffff;
 }
 
 /**grey section - light section, muted section - .ls.ms*/
