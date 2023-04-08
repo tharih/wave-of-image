@@ -200,11 +200,11 @@ const Contact = () => {
         <div className="col-sm-12 text-center">
           <div className="page_social_icons">
             <a
-              className="social-icon color-bg-icon soc-facebook"
+              className="social-icon color-bg-icon soc-instagram"
               href="#"
-              title="Facebook"
+              title="Instagram"
             />
-            <a
+            {/* <a
               className="social-icon color-bg-icon soc-twitter"
               href="#"
               title="Twitter"
@@ -223,7 +223,7 @@ const Contact = () => {
               className="social-icon color-bg-icon soc-pinterest"
               href="#"
               title="Pinterest"
-            />
+            /> */}
           </div>
         </div>
       </div>

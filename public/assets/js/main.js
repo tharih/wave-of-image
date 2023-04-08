@@ -23,6 +23,7 @@ function menuHideExtraElements() {
 	});
 }
 
+
 function initMegaMenu() {
 	var $megaMenu = jQuery('.mainmenu_wrapper .mega-menu');
 	if($megaMenu.length) {

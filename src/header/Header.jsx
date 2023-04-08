@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import $ from "jquery";
 import "jquery-ui-dist/jquery-ui";
-import "./header.css"
+import "./header.css" 
 import { useState } from "react";
 const Header = () => {
   // const [clicked, setClicked] = useState(false)
@@ -206,11 +206,14 @@ const Header = () => {
             {/* <span className="toggle_menu">
               <span />
             </span> */}
-            <div id="mobile" >
+            {/* <div id="mobile" > */}
               {/* <i id="bar" className={clicked? "fa fa-times" : "fa fa-bars"}></i> */}
-              <i className="fa fa-bars"></i>
-              <i className="fa fa-times"></i>
+              {/* <i className="fa fa-bars"></i> */}
+              {/* <i className="fa fa-times"></i> */}
 
+            {/* </div> */}
+            <div id='root'>
+          
             </div>
           </div>
           <div className="col-md-3 col-sm-6 header-contacts text-center hidden-xs">

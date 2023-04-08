@@ -85,11 +85,11 @@ const About = () => {
                     </div>
                     <div className="page_social_icons topmargin_20">
                       <a
-                        className="social-icon color-bg-icon soc-facebook"
+                        className="social-icon color-bg-icon soc-instagram"
                         href="#"
-                        title="Facebook"
+                        title="Instagram"
                       />
-                      <a
+                      {/* <a
                         className="social-icon color-bg-icon soc-twitter"
                         href="#"
                         title="Twitter"
@@ -108,7 +108,7 @@ const About = () => {
                         className="social-icon color-bg-icon soc-pinterest"
                         href="#"
                         title="Pinterest"
-                      />
+                      /> */}
                     </div>
                   </div>
                 </div>

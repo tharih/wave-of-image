@@ -88,18 +88,25 @@ const Footer = () => {
         >
           <div className="widget widget_banner">
             <div className="vertical-item content-absolute ds">
-              <div className="item-media">
+              {/* <div className="item-media">
                 <img src="assets/images/footer1.png" alt="" />
+              </div> */}
+                 <h3 className="widget-title">My Published Work</h3>
+              <div>
+                <ul className="list2 bottommargin_0">
+                  <li className="">
+                    <p>MODEL MAGAZINE</p>
+                  </li>
+                  <li className="">
+                    <p>ELEGANT MAGAZINE</p>
+                  </li>
+                  <li className="">
+                    <p>HI MAGAZINE</p>
+                  </li>
+                  
+                </ul>
               </div>
-              <div className="item-content">
-                {/* <span class="main_bg_color">
-											New
-										</span> */}
-                {/* <h2>
-                  Watch your
-                  <br /> Beauty
-                </h2> */}
-              </div>
+              
               
             </div>
           </div>
@@ -107,7 +114,7 @@ const Footer = () => {
       </div>
     </div>
   </footer>
-  <section className="ls page_copyright section_padding_20">
+  {/* <section className="ls page_copyright section_padding_20">
     <div className="container">
       <div className="row topmargin_5 bottommargin_5">
         <div className="col-sm-12 text-center">
@@ -121,7 +128,7 @@ const Footer = () => {
         </div>
       </div>
     </div>
-  </section>
+  </section> */}
 </>
 
   )
