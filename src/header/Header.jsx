@@ -102,7 +102,7 @@ const Header = () => {
             {/* </div> */}
             <div id="root"></div>
           </div>
-          <div className="col-md-3 col-sm-6 header-contacts text-center">
+          <div className="col-md-3 col-sm-6 header-contacts text-center hidden-lg">
             <CiMenuFries
               color="#fff"
               onClick={handleClick}

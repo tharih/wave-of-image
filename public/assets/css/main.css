@@ -37,6 +37,11 @@
 **bootstrap overrides
 */
 /* modal */
+
+html,
+body {
+  overflow-x: hidden;
+}
 .modal-backdrop.in {
   filter: alpha(opacity=80);
   opacity: 0.8;

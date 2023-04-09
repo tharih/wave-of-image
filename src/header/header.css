@@ -139,6 +139,12 @@ nav {
   margin-top: 20px;
   cursor: pointer;
 }
+
+@media (min-width: 767px) {
+  .hidden-lg {
+    display: none !important;
+  }
+}
 @keyframes appear {
   0% {
     opacity: 0;
