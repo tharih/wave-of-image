@@ -1,49 +1,52 @@
-nav{
-    display: flex;
-    align-items:center ;
-    justify-content: space-between;
-    background: black;
-    padding: 20px 80px;
-    box-shadow: 0 5px 15px rgba(0,0,0, 0.06);
+@import url("https://fonts.googleapis.com/css?family=Lobster");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: black;
+  padding: 20px 80px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
 }
-#navbar{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#navbar li{
-    list-style: none;
-    padding: 0 20px;
-    position: relative;
+#navbar li {
+  list-style: none;
+  padding: 0 20px;
+  position: relative;
 }
 
-#navbar li a{
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 600;
-    color: #fff;
-    transition: 0.3s ease-in-out;
+#navbar li a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  transition: 0.3s ease-in-out;
 }
 
 #navbar li a:hover::after,
 #navbar li a.active::after {
-    content: "";
-    width: 30%;
-    height: 2px;
-    background: #fff;
-    position: absolute;
-    bottom: -4px;
-    left: 20px;
+  content: "";
+  width: 30%;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
 }
 
 #mobile {
-    display: none;
+  display: none;
 }
 
 #mobile i {
-    color: #fff;
-    align-items: center;
+  color: #fff;
+  align-items: center;
 }
 
 @media screen and (max-width: 769px) {
@@ -80,10 +83,62 @@ nav{
     cursor: pointer;
   }
 }
+.mobile-nav {
+  position: fixed;
+  background-color: #1a1a1a;
+  width: 90%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  transform: translateX(-100%);
+  transition: all 300ms ease-out;
+}
+.mobile-nav-open {
+  transform: translateX(0%);
+}
+.mobile-nav > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+  margin-top: 20px;
+}
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  padding: 12px;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  list-style: none;
+  font-size: 16px;
+  text-transform: uppercase;
+  transition: all 300ms ease-out;
+  font-weight: 600;
+}
 
-@import url('https://fonts.googleapis.com/css?family=Lobster');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
+.mobile-nav-link:hover {
+  background-color: #f7ab10;
+  color: black;
+}
+.mobile-nav-icon {
+  cursor: pointer;
+  transform-origin: center;
+  transition: all 300ms ease-out;
+}
+.mobile-nav-icon:hover {
+  transform: scale(1.05);
+}
+.mobile-nav-open-icon {
+  margin-top: 20px;
+  cursor: pointer;
+}
 @keyframes appear {
   0% {
     opacity: 0;
@@ -110,6 +165,3 @@ nav{
     width: 90%;
   }
 }
-
-
-
