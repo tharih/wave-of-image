@@ -112,7 +112,7 @@ const Header = () => {
           </div>{" "}
           <div className="col-md-3 col-sm-6 header-contacts text-center hidden-xs">
             <div className="highlight inline-block fontsize_30 thin">
-              (+94) 77 1234567
+              (+94) 77 877 8944
             </div>
             <div className="fontsize_20 grey topmargin_-5">24/7 free calls</div>
           </div>
