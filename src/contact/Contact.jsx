@@ -49,7 +49,7 @@ const Contact = () => {
                 className="__cf_email__"
                 data-cfemail="fb939e979e959abb899e989e8b8f929495d5989496"
               >
-                [email&nbsp;protected]
+                
               </Link>
             </span>
             <br /> 8 (800) 456-2698
@@ -65,7 +65,7 @@ const Contact = () => {
                 className="__cf_email__"
                 data-cfemail="117b707c746251737e7e7a787f763f727e7c"
               >
-                [email&nbsp;protected]
+               
               </Link>
             </span>
             <br /> 8 (800) 456-2643
@@ -82,7 +82,7 @@ const Contact = () => {
                 className="__cf_email__"
                 data-cfemail="f0829f92958284b0808295839994959e84de939f9d"
               >
-                [email&nbsp;protected]
+               
               </Link>
             </span>
             <br /> 8 (800) 456-5848
@@ -196,31 +196,31 @@ const Contact = () => {
       <div className="row topmargin_20 bottommargin_10">
         <div className="col-sm-12 text-center">
           <div className="page_social_icons">
-            <Link
-              className="social-icon color-bg-icon soc-facebook"
-              to="#"
-              title="Facebook"
+            <a
+              className="social-icon color-bg-icon soc-instagram"
+              href="https://www.instagram.com/wave_of_image/"
+              title="Instagram"
             />
-            <Link
+            {/* <a
               className="social-icon color-bg-icon soc-twitter"
-              to="#"
+              href="#"
               title="Twitter"
             />
-            <Link
+            <a
               className="social-icon color-bg-icon soc-google"
-              to="#"
+              href="#"
               title="Google"
             />
-            <Link
+            <a
               className="social-icon color-bg-icon soc-linkedin"
-              to="#"
+              href="#"
               title="LinkedIn"
             />
-            <Link
+            <a
               className="social-icon color-bg-icon soc-pinterest"
-              to="#"
+              href="#"
               title="Pinterest"
-            />
+            /> */}
           </div>
         </div>
       </div>

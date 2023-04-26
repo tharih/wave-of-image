@@ -201,7 +201,7 @@ const Contact = () => {
           <div className="page_social_icons">
             <a
               className="social-icon color-bg-icon soc-instagram"
-              href="#"
+              href="https://www.instagram.com/wave_of_image/"
               title="Instagram"
             />
             {/* <a
