@@ -7,7 +7,7 @@ const About = () => {
     <div className="flexslider vertical-nav">
      
        
-          <img src="assets/images/slide01.png" alt="" />
+          <img src="assets/images/slide001.png" alt="" />
           <div className="container">
             <div className="row">
               <div className="col-sm-12 text-center text-md-right">

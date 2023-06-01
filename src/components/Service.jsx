@@ -6,7 +6,7 @@ const Service = () => {
     <div className="flexslider vertical-nav">
       
         <div>
-          <img src="assets/images/slide02.png" alt="" />
+          <img src="assets/images/slider002.png" alt="" />
           <div className="container">
             <div className="row">
               <div className="col-sm-12 text-center text-md-right">
